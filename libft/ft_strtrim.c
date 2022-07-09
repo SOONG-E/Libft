@@ -6,13 +6,13 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 19:37:51 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/08 22:03:48 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/09 22:07:22 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_set(char s, char *set)
+static int	check_set(char s, char const *set)
 {
 	int	idx;
 
@@ -21,46 +21,46 @@ int	check_set(char s, char *set)
 	{
 		if (set[idx] == s)
 			return (1);
-		idx++;
+		++idx;
 	}
 	return (0);
 }
 
-int	count_set(char const *s1, char const *set)
+static int	find_set(char const *s, char const *set, int idx)
 {
-	int	idx1;
-	int	count;
-
-	idx1 = 0;
-	count = 0;
-	while (s1[idx1])
+	if (idx == 0)
 	{
-		if (check_set(s1[idx1], (char *)set))
-			count++;
-		idx1++;
+		while (check_set(s[idx], set) && s[idx])
+			++idx;
+		return (idx);
 	}
-	return (count);
+	else
+	{
+		while (check_set(s[idx], set) && s[idx] && idx >= 0)
+			--idx;
+		return (idx);
+	}
+	return (idx);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	int		start;
+	int		end;
+	int		idx;
 	char	*ret;
-	int		amount;
-	int		idx1;
-	int		idx2;
 
-	amount = ft_strlen(s1) - count_set(s1, set);
-	ret = (char *)malloc(sizeof(char) * amount);
+	if (!s1 || !set)
+		return (NULL);
+	start = find_set(s1, set, 0);
+	end = find_set(s1, set, ft_strlen(s1) - 1);
+	if (end == 0)
+		end = start;
+	ret = (char *)ft_calloc(end - start + 2, sizeof(char));
 	if (!ret)
 		return (NULL);
-	idx1 = 0;
-	idx2 = 0;
-	while (s1[idx1])
-	{
-		if (!check_set(s1[idx1], (char *)set))
-			ret[idx2++] = s1[idx1];
-		idx1++;
-	}
-	ret[idx2] = 0;
+	idx = 0;
+	while (start <= end)
+		ret[idx++] = s1[start++];
 	return (ret);
 }

@@ -6,11 +6,11 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:39:11 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/08 22:09:48 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/09 16:12:55 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

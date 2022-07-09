@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 19:11:29 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 21:43:39 by yujelee          ###   ########.fr       */
+/*   Created: 2022/07/09 18:39:25 by yujelee           #+#    #+#             */
+/*   Updated: 2022/07/09 19:59:56 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	char	*ret;
-	size_t	idx1;
-	size_t	idx2;
+	int		len;
+	t_list	*temp;
 
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) < start)
-		len = 0;
-	if (ft_strlen(s) - start < len)
-		len = ft_strlen(s) - start;
-	ret = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!ret)
-		return (NULL);
-	idx1 = start;
-	idx2 = 0;
-	while (s[idx1] && len--)
-		ret[idx2++] = s[idx1++];
-	return (ret);
+	if (!lst)
+		return (0);
+	len = 0;
+	temp = lst;
+	while (temp)
+	{
+		temp = temp->next;
+		len++;
+	}
+	return (len);
 }

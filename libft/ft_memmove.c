@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:34:58 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/08 17:30:16 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/09 11:59:21 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	temp = (unsigned char *)src;
 	count = 0;
+	if (!dst && !src)
+		return (NULL);
 	if (dst < src)
 	{
 		while (count < len)

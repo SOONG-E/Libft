@@ -6,18 +6,18 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:48:48 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/08 22:10:04 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/09 20:12:17 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c, int fd)
+static void	ft_putchar(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void	ft_put_rec(long c, int fd)
+static void	ft_put_rec(long c, int fd)
 {
 	if (c >= 10)
 	{

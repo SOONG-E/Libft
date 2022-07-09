@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:08:18 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/07 10:45:05 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/09 11:57:10 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
 	size_t	count;
 
+	if (!dst && !src)
+		return (NULL);
 	count = 0;
 	while (count < len)
 	{
