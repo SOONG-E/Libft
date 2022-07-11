@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 20:04:53 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 18:15:24 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 15:47:28 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void	free_child(char **ret, int idx)
 {
 	while (idx >= 0)
 		free(ret[idx--]);
+	free(ret);
 }
 
 static void	find_str(char const *s, char c, int *start, int *end)

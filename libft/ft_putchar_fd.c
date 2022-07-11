@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:39:11 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 16:12:55 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 15:42:59 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (fd > 0)
+		write(fd, &c, 1);
 }

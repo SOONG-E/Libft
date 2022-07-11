@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:48:48 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 20:12:17 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 15:43:39 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	num;
 
-	num = n;
-	if (n < 0)
+	if (fd > 0)
 	{
-		write(fd, "-", 1);
-		num = num * (-1);
+		num = n;
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			num = num * (-1);
+		}
+		ft_put_rec(num, fd);
 	}
-	ft_put_rec(num, fd);
 }

@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:53:46 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 21:22:36 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 15:50:51 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*temp;
 
 	ret = NULL;
-	while (lst)
+	while (lst && f)
 	{
 		temp = ft_lstnew(f(lst->content));
 		if (!temp)

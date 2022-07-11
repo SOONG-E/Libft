@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:42:22 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 16:14:41 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 16:02:24 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	size_t	idx;
+
+	idx = 0;
+	if (s && fd > 0)
+	{
+		while (s[idx])
+			write(fd, &s[idx++], 1);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:15:36 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 20:27:29 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 15:48:34 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst)
+	if (lst && del)
 	{
 		del(lst->content);
 		free(lst);
