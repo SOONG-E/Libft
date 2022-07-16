@@ -6,27 +6,12 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 19:37:51 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/11 18:18:10 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 19:34:00 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-static int	check_set(char s, char const *set)
-{
-	int	idx;
-
-	idx = 0;
-	while (set[idx])
-	{
-		if (set[idx] == s)
-			return (1);
-		++idx;
-	}
-	return (0);
-}
-*/
 static int	find_set(char const *s, char const *set, int idx)
 {
 	if (idx == 0)

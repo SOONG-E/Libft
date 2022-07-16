@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:25:01 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/09 16:55:42 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 19:31:34 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*ret;
 	unsigned int	idx;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	amount = ft_strlen(s);
 	ret = (char *)ft_calloc(amount + 1, sizeof(char));

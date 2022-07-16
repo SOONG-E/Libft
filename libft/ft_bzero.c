@@ -6,14 +6,16 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:43:09 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/07 13:18:00 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 19:40:32 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, int len)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t len)
 {
-	int		count;
-	char	*chr;
+	size_t			count;
+	unsigned char	*chr;
 
 	count = 0;
 	chr = s;

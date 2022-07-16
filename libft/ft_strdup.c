@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:04:27 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/08 18:10:24 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 19:27:48 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	int		idx;
 
 	idx = 0;
-	ret = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
+	ret = (char *)ft_calloc(ft_strlen(s1) + 1, sizeof(char));
 	if (!ret)
 		return (NULL);
 	while (s1[idx])
@@ -26,6 +26,5 @@ char	*ft_strdup(const char *s1)
 		ret[idx] = s1[idx];
 		idx++;
 	}
-	ret[idx] = 0;
 	return (ret);
 }

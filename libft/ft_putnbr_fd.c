@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:48:48 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/11 15:43:39 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 19:23:16 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	num;
 
-	if (fd > 0)
+	if (fd >= 0)
 	{
 		num = n;
 		if (n < 0)

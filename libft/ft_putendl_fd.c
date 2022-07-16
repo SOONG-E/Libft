@@ -6,7 +6,7 @@
 /*   By: yujelee <yujelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:44:29 by yujelee           #+#    #+#             */
-/*   Updated: 2022/07/11 15:43:11 by yujelee          ###   ########.fr       */
+/*   Updated: 2022/07/11 19:23:20 by yujelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s && fd > 0)
+	if (s && fd >= 0)
 	{
 		write(fd, s, ft_strlen(s));
 		write(fd, "\n", 1);
