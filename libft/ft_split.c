@@ -49,8 +49,8 @@ static char	*make_str(char *s, int *start, int *end)
 
 static void	free_child(char **ret, int idx)
 {
-	while (idx >= 0)
-		free(ret[idx--]);
+	while (--idx >= 0)
+		free(ret[idx]);
 	free(ret);
 }
 
